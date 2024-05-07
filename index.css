@@ -1,0 +1,66 @@
+body{
+   margin: 0px;
+    background-color: #161616;
+}
+#des-1{
+    position: absolute;
+    
+}
+.navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: #1C1C1C;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+.icon{
+    display: flex;
+    padding-left: 20px;
+}
+#bankname{
+    color: white;
+    font-size: 20px;
+}
+.menu{
+    display: flex;
+    
+}
+.ul{
+    color: white;
+    text-decoration: none;
+}
+.signup-login{
+    display: flex;
+    padding-right: 25px;
+    gap: 15px;
+}
+
+/* body */
+.body{
+    margin: 20px;
+}
+.home-left{
+    padding-left: 40px;
+    padding-top: 20px;
+    width: 50%;
+}
+.llc{
+    display: flex;
+    background-color: #1C1C1C;
+    width: 260px;
+    padding-left: 10px;
+    border-radius: 30px;
+    font-size: 15px;
+    gap: 5px;
+}
+#getstarted{
+    color: black;
+    text-decoration: none;
+    background-color: #CAFF33;
+    padding: 10px;
+    border-radius: 20px;
+}
