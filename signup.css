@@ -1,0 +1,145 @@
+body{
+    margin: 0px;
+     background-color: #161616;
+     color: white;
+ }
+ p{
+     color: rgb(162, 160, 160)
+ }
+ #des-1{
+     position: absolute;
+     
+ }
+ .navbar{
+     position: relative;
+     display: flex;
+     justify-content: space-between;
+     background: #1C1C1C;
+     border-radius: 30px;
+     margin-top: 10px;
+     margin-left: 50px;
+     margin-right: 50px;
+     
+ }
+ .icon{
+     display: flex;
+     padding-left: 20px;
+ }
+ #bankname{
+     color: white;
+     font-size: 20px;
+ }
+ .menu{
+     display: flex;
+     
+ }
+ .ul{
+     color: white;
+     text-decoration: none;
+ }
+ .signup-login{
+     display: flex;
+     padding-right: 25px;
+     gap: 15px;
+     padding-top: 5px;
+ }
+ #login{
+    background-color: #CAFF33;
+    color: black;
+    text-decoration: none;
+    width: 30px;
+    border-radius: 15px;
+    padding: 8px;
+ }
+ .body{
+    /* background-image: url(./images/bg.png); */
+    background-image: url(./images/radial.svg);
+    background-repeat: no-repeat;
+    background-position: right top; 
+    /* background-position: top; */
+    
+    background-color: #141414;
+    margin: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+ }
+ .credential-1{
+    display: flex;
+    gap: 30px;
+ }
+ .credential-2{
+    display: flex;
+    gap: 30px;
+ }
+.cred{
+    height: 40px;
+    width: 380px;
+    background-color: #1C1C1C;
+    border-radius: 20px;
+    padding-left: 30px;
+    border: none;
+    color: white;
+}
+#forgot{
+    color: white;  
+}
+.btn{
+    background-color: #1C1C1C;
+    color: white;
+    border: none;
+    width: 360px;
+    height: 32px;
+    border-radius: 20px;
+}
+#signup{
+    background-color: #CAFF33;
+    color: black;
+}
+.continue-with{
+    display: flex;
+    gap: 20px;   
+}
+.continue-social{
+    width: 60px;
+}
+.footer{
+   padding-left: 50px;
+   padding-right: 50px;
+    background-color: #1C1C1C;
+  }
+  #icon{
+    justify-content: center;
+  }
+  #menu{
+    justify-content: center;
+  }
+  .detail{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+  .detail-list{
+    display: flex;
+    gap: 3px;
+  }
+  .socials{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    padding-right: 17px;
+    background-color: #161616;
+   
+    border-radius: 30px;
+
+  }
+  hr{
+    border: none;
+    height: 1px;
+    background-color: #333;  
+  }
