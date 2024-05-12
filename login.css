@@ -56,12 +56,9 @@ body{
     background-image: url(./images/radial.svg);
     background-repeat: no-repeat;
     background-position: right top; 
-    /* background-position: top; */
-    
     background-color: #141414;
     margin: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
+    width: auto;
     padding-bottom: 30px;
     display: flex;
     flex-direction: column;
