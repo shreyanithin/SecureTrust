@@ -33,10 +33,10 @@ body{
      display: flex;
      
  }
- .ul{
-     color: white;
-     text-decoration: none;
- }
+ .menu-list{
+    color: white;
+    text-decoration: none;
+  }
  .signup-login{
      display: flex;
      padding-right: 25px;

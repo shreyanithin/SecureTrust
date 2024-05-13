@@ -33,6 +33,10 @@ p{
     display: flex;
     
 }
+.menu-list{
+  color: white;
+  text-decoration: none;
+}
 .ul{
     color: white;
     text-decoration: none;
