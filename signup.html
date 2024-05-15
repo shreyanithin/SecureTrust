@@ -48,19 +48,22 @@
       </p>
       <br /><br />
       <div class="credential-1">
-        <input class="cred" type="text" placeholder="Enter first name" />
-        <input class="cred" type="text" placeholder="Enter last name" />
+        <input class="cred" id="fname" type="text" placeholder="Enter first name" />
+        <input class="cred" id="lname" type="text" placeholder="Enter last name" />
       </div>
       <br /><br />
       <div class="credential-2">
-        <input class="cred" type="email" placeholder="Enter your email" />
-        <input class="cred" type="password" placeholder="Enter your password" />
+        <input class="cred" id="email" type="email" placeholder="Enter your email" />
+        <input class="cred" id="password" type="password" placeholder="Enter your password" />
       </div>
       <br /><br />
       <a id="forgot" href="">Forgot password?</a><br /><br />
 
-      <button class="btn" id="signup">Sign Up</button><br />
-      <button class="btn">Login</button><br />
+      <button class="btn" id="signup" onclick="signup()">Sign Up</button><br />
+      <a href="./login.html">
+      <button class="btn">Login</button>
+      </a>
+      <br />
       <img style="width: 360px" src="./images/continue with.svg" alt="" /><br />
       <div class="continue-with">
         <img class="continue-social" src="./images/google.svg" alt="" />
@@ -117,5 +120,6 @@
       </div>
       <br />
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
