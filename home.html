@@ -9,12 +9,19 @@
 <body>
     <img id="des-1" src="./images/Objects.svg" alt="">
     <!-- navbar -->
-    <div class="navbar">
+    <div class="navbar" id="navbar">
+        <div class="headham">
+        <div class="icon-fixed">
         <div class="icon">
             <img src="./images/Logo.svg" alt="">
             <p id="bankname">SecureTrust</p>
         </div>
-        <div class="menu">
+        </div>
+        <div class="img-ham">
+        <img class="hamburger" id="ham" src="./images/hamburger.jpg" alt="" onclick="display()"></div>
+    </div>
+        <div id="open-menu">
+        <div class="menu" id="menuid">
             <ul><a class="menu-list" href="./home.html">Home</a></ul>
             <ul><a class="menu-list" href="">Careers</a></ul>
             <ul><a class="menu-list" href="">About</a></ul>
@@ -27,6 +34,7 @@
         <div class="login">
             <p><a class="menu-list" href="./login.html">Login</a></p>
         </div>
+    </div>
     </div>
     </div><br><br>
     <!-- body -->
@@ -212,7 +220,7 @@
         <div class="testimonial">
             <h1>Our <span style="color: #CAFF33;">Testimonials</span></h1>
             <div class="test-head">
-            <p style="width: 60%;">Discover how SecureTrust has transformed lives with innovative digital solutions and personalized customer service.See why our clients trust us for a secure and a prosperous financial journey</p>
+            <p id="test-head-b">Discover how SecureTrust has transformed lives with innovative digital solutions and personalized customer service.See why our clients trust us for a secure and a prosperous financial journey</p>
             <div class="ind-bus_button">
                 <p id="ind-2" class="test-button">for individual</p>
                 <p id="bus" class="test-button">for business</p>
@@ -258,7 +266,7 @@
             <img src="./images/Logo.svg" alt="">
             <p id="bankname">SecureTrust</p>
         </div>
-        <div class="menu" id="menu">
+        <div  id="menu">
             <ul><a class="menu-list" href="./home.html">Home</a></ul>
             <ul><a class="menu-list" href="">Careers</a></ul>
             <ul><a class="menu-list" href="">About</a></ul>
@@ -282,7 +290,7 @@
         <br>
         <hr><br><br>
         <div class="socials">
-            <img src="./images/social.svg" alt="">
+            <img id="social" src="./images/social.svg" alt="">
             <p>SecureTrust All Rights Reserved</p>
             <p>Privacy Policy | Terms of Service</p>
         </div><br>
