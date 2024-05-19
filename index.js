@@ -1,3 +1,18 @@
+function display() {
+  let get = document.getElementById("open-menu");
+  if (get.style.display === "flex") {
+    get.style.display = "none";
+  } else {
+    get.style.display = "flex";
+  }
+
+  document.getElementById("open-menu").style.flexDirection = "column";
+  document.getElementById("menuid").style.flexDirection = "column";
+  document.getElementById("navbar").style.flexDirection = "column";
+  get.style.flexDirection = "column";
+  get.style.marginLeft = "30px";
+}
+
 function signup() 
 {
     let firstname = document.getElementById("fname").value;
@@ -56,6 +71,18 @@ function login()
           alert("User not found.Enter details");
       }
 }
+
+function show(){
+    const pass = document.getElementById('pwd');
+    if (pass.type === 'password') {
+        pass.type = 'text';
+    } 
+    else {
+        pass.type = 'password';
+   }
+  }
+
+
 
 function forgot(){
   let email=prompt("enter email");
