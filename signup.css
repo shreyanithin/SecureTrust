@@ -76,9 +76,19 @@ body{
     align-items: center;
     border-radius: 20px;
  }
+ input:-webkit-autofill,
+ input:-webkit-autofill:hover, 
+ input:-webkit-autofill:focus, 
+ input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(28,28,28) inset !important;
+ }
+ input:-webkit-autofill{
+  -webkit-text-fill-color: white !important;
+ }
  .credential-1{
     display: flex;
     gap: 30px;
+    
  }
  .credential-2{
     display: flex;
