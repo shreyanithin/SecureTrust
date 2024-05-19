@@ -10,7 +10,7 @@ body{
      position: absolute;
      
  }
- .navbar{
+ #navbar{
      position: relative;
      display: flex;
      justify-content: space-between;
@@ -29,7 +29,14 @@ body{
      color: white;
      font-size: 20px;
  }
- .menu{
+ .hamburger{
+  display: none;
+}
+#open-menu{
+  display: flex;
+  gap: 90px;
+}
+#menuid{
      display: flex;
      
  }
@@ -159,7 +166,9 @@ body{
     justify-content: center;
   }
   #menu{
+    display: flex;
     justify-content: center;
+    align-items: center;
   }
   .detail{
     display: flex;
@@ -180,3 +189,88 @@ body{
     border-radius: 30px;
 
   }
+
+  @media only screen and (max-width: 867px) {
+    .hamburger{
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding-right: 10px;
+      padding-top: 23px; 
+      
+    }
+    .headham{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 3px;
+    }
+    .open-menu{
+      display: none;
+    }
+  
+  .body{
+    flex-direction: column;
+    width: 270px;
+  }
+  .intro{
+    position: relative;
+    width: 180px;
+    border-radius: 0px;
+  }
+  #sec-img{
+    width: 250px;
+    padding-left: 10px;
+  }
+  .grid{
+    background-image: none;
+    padding: 30px;
+    display: flex;
+    border-radius: 20px;
+    height: fit-content;
+    width: 300px;
+    
+  }
+  .container{
+    /* display:grid; */
+    grid-template-columns: 400px ;
+    grid-row-gap: 40px;
+    }
+  .box{
+    background-image: url(./images/Background\ Image-gradient.svg);
+    width: 200px;
+    height: 300px;
+  }
+  .faq-grid{
+    display:grid;
+    grid-template-columns: 400px ;
+    grid-row-gap: 40px;
+  }
+  .faq-box{
+    width: 200px;
+    height: 400px;
+  }
+  #menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-list{
+    font-size: 15px;
+  }
+  .detail{
+    flex-direction: column;
+    padding-left: 20px;
+    align-items: center;
+  }
+  .socials{
+    flex-direction: column;
+    text-align: center;
+  }
+  #social{
+    display: flex;
+    width: 100px;
+    align-items: center;
+  }
+}
