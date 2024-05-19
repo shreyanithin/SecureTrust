@@ -10,7 +10,7 @@ body{
      position: absolute;
      
  }
- .navbar{
+ #navbar{
      position: relative;
      display: flex;
      justify-content: space-between;
@@ -29,7 +29,14 @@ body{
      color: white;
      font-size: 20px;
  }
- .menu{
+ .hamburger{
+  display: none;
+}
+#open-menu{
+  display: flex;
+  gap: 90px;
+}
+#menuid{
      display: flex;
      
  }
@@ -43,7 +50,7 @@ body{
      gap: 15px;
      padding-top: 5px;
  }
- #login{
+ #signup{
     background-color: #CAFF33;
     color: black;
     text-decoration: none;
@@ -60,8 +67,8 @@ body{
     
     background-color: #141414;
     margin: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
+    /* margin-left: 150px;
+    margin-right: 150px; */
     padding-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -97,7 +104,7 @@ body{
     height: 32px;
     border-radius: 20px;
 }
-#signup{
+#Signup{
     background-color: #CAFF33;
     color: black;
 }
@@ -118,6 +125,7 @@ body{
   }
   #menu{
     justify-content: center;
+    display: flex;
   }
   .detail{
     display: flex;
@@ -142,4 +150,66 @@ body{
     border: none;
     height: 1px;
     background-color: #333;  
+  }
+
+  @media only screen and (max-width: 867px) {
+    .hamburger{
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding-right: 10px;
+      padding-top: 23px; 
+      
+    }
+    .headham{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 3px;
+    }
+    .open-menu{
+      display: none;
+    }
+    .cred{
+      width: 100%;
+    }
+    .credential-1 {
+      flex-direction: column;
+    }
+    .credential-2 {
+      flex-direction: column;
+    }
+    .btn{
+      width: 200px;
+    }
+
+
+
+
+
+
+
+    #menu{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .menu-list{
+      font-size: 15px;
+    }
+    .detail{
+      flex-direction: column;
+      padding-left: 20px;
+      align-items: center;
+    }
+    .socials{
+      flex-direction: column;
+      text-align: center;
+    }
+    #social{
+      display: flex;
+      width: 100px;
+      align-items: center;
+    }
   }

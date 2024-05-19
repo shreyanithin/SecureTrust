@@ -9,35 +9,34 @@
   <body>
     <!-- <img id="des-1" src="./images/Objects.svg" alt=""> -->
     <!-- navbar -->
-    <div class="navbar">
+    <div class="navbar" id="navbar">
+      <div class="headham">
+      <div class="icon-fixed">
       <div class="icon">
-        <img src="./images/Logo.svg" alt="" />
-        <p id="bankname">SecureTrust</p>
+          <img src="./images/Logo.svg" alt="">
+          <p id="bankname">SecureTrust</p>
       </div>
-      <div class="menu">
-        <ul>
-          <a class="menu-list" href="./home.html">Home</a>
-        </ul>
-        <ul>
-          <a class="menu-list" href="">Careers</a>
-        </ul>
-        <ul>
-          <a class="menu-list" href="">About</a>
-        </ul>
-        <ul>
-          <a class="menu-list" href="./security.html">Security</a>
-        </ul>
+      </div>
+      <div class="img-ham">
+      <img class="hamburger" id="ham" src="./images/hamburger.jpg" alt="" onclick="display()"></div>
+  </div>
+      <div id="open-menu">
+      <div class="menu" id="menuid">
+          <ul><a class="menu-list" href="./home.html">Home</a></ul>
+          <ul><a class="menu-list" href="">Careers</a></ul>
+          <ul><a class="menu-list" href="">About</a></ul>
+          <ul><a class="menu-list" href="./security.html">Security</a></ul>
       </div>
       <div class="signup-login">
-        <div class="signup">
+      <div class="signup">
           <p><a class="menu-list" href="./signup.html">Sign Up</a></p>
-        </div>
-        <div class="login">
-          <p><a class="menu-list" href="./login.html">Login</a></p>
-        </div>
       </div>
-    </div>
-    <br /><br />
+      <div class="login"  >
+          <p><a id="login" class="menu-list" href="./login.html">Login</a></p>
+      </div>
+  </div>
+  </div>
+  </div><br><br>
     <!-- body -->
 
     <div class="body">
@@ -62,9 +61,9 @@
       <br />
       <img style="width: 360px" src="./images/continue with.svg" alt="" /><br />
       <div class="continue-with">
-        <img class="continue-social" src="./images/google.svg" alt="" />
-        <img class="continue-social" src="./images/fb.svg" alt="" />
-        <img class="continue-social" src="./images/apple.svg" alt="" />
+        <a href="https://www.google.co.in/"> <img class="continue-social" src="./images/google.svg" alt="" /></a>
+       <a href="https://www.facebook.com/"> <img class="continue-social" src="./images/fb.svg" alt="" /></a>
+        <a href="https://appleid.apple.com/"><img class="continue-social" src="./images/apple.svg" alt="" /></a>
       </div>
     </div>
     <br /><br />
@@ -110,7 +109,7 @@
       <hr />
       <br /><br />
       <div class="socials">
-        <img src="./images/social.svg" alt="" />
+        <img id="social" src="./images/social.svg" alt="" />
         <p>SecureTrust All Rights Reserved</p>
         <p>Privacy Policy | Terms of Service</p>
       </div>
