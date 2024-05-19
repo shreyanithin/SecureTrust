@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./myaccount.css">
+</head>
+<body>
+    <!-- navbar -->
+    <div class="navbar" id="navbar">
+        <div class="headham">
+        <div class="icon-fixed">
+        <div class="icon">
+            <img src="./images/Logo.svg" alt="">
+            <p id="bankname">SecureTrust</p>
+        </div>
+        </div>
+        <div class="img-ham">
+        <img class="hamburger" id="ham" src="./images/hamburger.jpg" alt="" onclick="display()"></div>
+    </div>
+        <div id="open-menu">
+        <div class="menu" id="menuid">
+            <ul><a class="menu-list" href="" >Dashboard</a></ul>
+            <ul><a class="menu-list" href="">Transactions</a></ul>
+            <ul><a class="menu-list" href="#withdraw">Withdraw</a></ul>
+            <ul><a class="menu-list" href="#deposit">Deposit</a></ul>
+            <ul><a class="menu-list" href="#transfer">Transfer</a></ul>
+        </div>
+        <ul id="logout" onclick="logout()">Logout</ul>
+    </div>
+    </div><br><br>
+
+    <!-- dashboard -->
+    <div class=""></div>
+    <div class="dashboard">
+        <div class="">
+            <h1 style="color: #CAFF33;">Welcome <span id="username-display"></span></h1>
+        </div>
+        <br><br>
+        <h2 style="color: #CAFF33;">Account Details</h2>
+        <div id="account-details">
+            <button onclick="viewDetails()" class="btn">View Details</button>
+        </div>
+    </div>
+    <div id="transaction">
+        <h2 style="color: #CAFF33;">Previous Transactions</h2>
+        <div id="transaction-list"></div>
+    </div>
+    <div id="withdraw">
+        <h2 style="color: #CAFF33;">Withdrawal</h2>
+        <label for="number">Enter amount</label> 
+        <input type="number" id="with-amt" class="ip" ><br><br>
+        <label for="password">Enter password</label>
+        <input type="password" id="pass" class="ip"><br><br>
+        <button onclick="withdraw()" class="btn">Withdraw</button>
+    </div><br>
+    <div id="deposit">
+        <h2 style="color: #CAFF33;">Deposit</h2>
+        <label for="number">Enter amount</label>
+        <input type="number" id="dep-amt" class="ip"><br><br>
+        <label for="password">Enter password</label>
+        <input type="password" id="deppwd" class="ip"><br><br>
+        <button onclick="deposit()" class="btn">Deposit</button>
+    </div><br>
+    <div id="transfer">
+        <h2 style="color: #CAFF33;">Bank Transfer</h2>
+        <label for="email">Enter the recipient's mail id</label>
+        <input type="email" class="ip"><br><br>
+        <label for="number">Enter amount</label>
+        <input type="number" class="ip"><br><br>
+        <label for="password">Enter password</label>
+        <input type="password" class="ip" id="transpwd"><br><br>
+        <button onclick="transfer()" class="btn">Transfer</button>
+    </div>
+    <div class="contact-us"></div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
+
