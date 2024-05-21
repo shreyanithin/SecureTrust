@@ -353,11 +353,14 @@ p{
     .use{
       flex-direction: column;
     }
+<<<<<<< HEAD
     .learn-more{
       padding: 8px;
       width: 110px;
       height: 50px;
     }
+=======
+>>>>>>> 70bbb547f414d00a5c4706af7bd0e102b2c8f7ed
     .val{
       flex-direction: column;
     }
