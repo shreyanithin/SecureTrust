@@ -96,6 +96,21 @@ body{
     border: none;
     color: white;
 }
+.empty{
+  display: flex;
+}
+#emptymail{
+  padding-top: 10px;
+  width: max-content;
+  color: rgb(223, 76, 76);
+  display: none;
+  
+}
+#emptypwd{
+  padding-top: 10px;
+  color: rgb(223, 76, 76);
+  display: none;
+}
 #forgot{
     color: white;  
 }

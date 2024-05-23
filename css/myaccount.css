@@ -58,6 +58,14 @@ body{
 
  
  /* dashboard */
+ .welcome h1 {
+    display: inline;
+    color: #CAFF33;
+  }
+  .welcome #username-display {
+    display: inline;
+    color: white;
+  }
  .ip{
     height: 20px;
     background-color: #474444;

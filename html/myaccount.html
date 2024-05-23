@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./myaccount.css">
+    <link rel="stylesheet" href="../css/myaccount.css">
 </head>
 <body>
     <!-- navbar -->
@@ -12,12 +12,12 @@
         <div class="headham">
         <div class="icon-fixed">
         <div class="icon">
-            <img src="./images/Logo.svg" alt="">
+            <img src="../images/Logo.svg" alt="">
             <p id="bankname">SecureTrust</p>
         </div>
         </div>
         <div class="img-ham">
-        <img class="hamburger" id="ham" src="./images/hamburger.jpg" alt="" onclick="display()"></div>
+        <img class="hamburger" id="ham" src="../images/hamburger.jpg" alt="" onclick="display()"></div>
     </div>
         <div id="open-menu">
         <div class="menu" id="menuid">
@@ -34,8 +34,8 @@
     <!-- dashboard -->
     <div class=""></div>
     <div class="dashboard">
-        <div class="">
-            <h1 style="color: #CAFF33;">Welcome <span id="username-display"></span></h1>
+        <div class="welcome">
+            <h1 id="username-display"></h1>
         </div>
         <br><br>
         <h2 style="color: #CAFF33;">Account Details</h2>
@@ -66,16 +66,16 @@
     <div id="transfer">
         <h2 style="color: #CAFF33;">Bank Transfer</h2>
         <label for="email">Enter the recipient's mail id</label>
-        <input type="email" class="ip"><br><br>
+        <input type="email" class="ip" id="transmail"><br><br>
         <label for="number">Enter amount</label>
-        <input type="number" class="ip"><br><br>
+        <input type="number" class="ip" id="transamt"><br><br>
         <label for="password">Enter password</label>
         <input type="password" class="ip" id="transpwd"><br><br>
         <button onclick="transfer()" class="btn">Transfer</button>
     </div>
     <div class="contact-us"></div>
 
-    <script src="./index.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 </html>
 
