@@ -214,10 +214,19 @@ p{
     border-color: #414040;
     padding:20px;
     border-radius:10px;
-    height: 240px;
+    height: 110px;
     width: 450px;
   
   }
+  .faq-content{
+    display: none;
+  }
+  .faq-more{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
   hr{
     border: none;
     height: 1px;
@@ -347,6 +356,9 @@ p{
     .prod-1{
       flex-direction: column;
     }
+    .ind-bus_button{
+      width: 230px;
+    }
     .prod-2{
       flex-direction: column;
     }
@@ -369,6 +381,7 @@ p{
       flex-direction: row;
       gap: 10px;
       font-size: 10px;
+      margin-left: 30px;
     }
     .container{
     display:grid;

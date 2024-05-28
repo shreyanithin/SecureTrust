@@ -60,7 +60,7 @@ body{
  }
  .body{
     /* background-image: url(./images/bg.png); */
-    background-image: url(./images/radial.svg);
+    background-image: url(../images/radial.svg);
     background-repeat: no-repeat;
     background-position: right top; 
     /* background-position: top; */

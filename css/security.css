@@ -153,6 +153,15 @@ body{
     width: 450px;
   
   }
+  .faq-content{
+    display: none;
+  }
+  .faq-more{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
   hr{
     border: none;
     height: 1px;
@@ -224,7 +233,7 @@ body{
   }
   .grid{
     background-image: none;
-    padding: 30px;
+    padding: 0px;
     display: flex;
     border-radius: 20px;
     height: fit-content;
@@ -232,9 +241,10 @@ body{
     
   }
   .container{
-    /* display:grid; */
-    grid-template-columns: 400px ;
+    grid-template-columns: 200px ;
     grid-row-gap: 40px;
+    width: 100px;
+    margin-left: 0px;
     }
   .box{
     background-image: url(./images/Background\ Image-gradient.svg);
@@ -248,7 +258,7 @@ body{
   }
   .faq-box{
     width: 200px;
-    height: 400px;
+    height: 200px;
   }
   #menu{
     display: flex;
