@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/myaccount.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
 </head>
 <body>
     <!-- navbar -->
@@ -45,7 +47,9 @@
     </div>
     <div id="transaction">
         <h2 style="color: #CAFF33;">Previous Transactions</h2>
-        <div id="transaction-list"></div>
+        <div id="transaction-list">
+            <button onclick="viewTransactions()" class="btn">View Transactions</button><br><br>
+        </div>
     </div>
     <div id="withdraw">
         <h2 style="color: #CAFF33;">Withdrawal</h2>

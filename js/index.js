@@ -1,9 +1,15 @@
-const user = []; 
-const currentUser = {
+const users =JSON.parse(localStorage.getItem("users")) ||  []; 
+let currentUser =JSON.parse(localStorage.getItem("currentUser")) || {
   balance: 0,
   transactions: [],
 };
 
+function updateUsersLocalStorage(){
+  localStorage.setItem("users",JSON.stringify(users))
+}
+function updateCurrentUserLocalStorage() {
+  localStorage.setItem("currentUser", JSON.stringify(currentUser));
+}
 
 function display() {
   let get = document.getElementById("open-menu");
@@ -20,6 +26,22 @@ function display() {
   get.style.marginLeft = "30px";
 }
 
+function faqshow() {
+  let elements = document.getElementsByClassName("faq-content");
+  let cont=document.getElementsByClassName("faq-box");
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].style.display === "flex") {
+      elements[i].style.display = "none";
+      cont[i].style.height="110px";
+    } else {
+      elements[i].style.display = "flex";
+      cont[i].style.height="300px";
+    }
+  }
+
+}
+
+
 function signup() 
 {
     let firstname = document.getElementById("fname").value;
@@ -27,15 +49,16 @@ function signup()
     let mail = document.getElementById("email").value;
     let pwd = document.getElementById("password").value;
   
-    let user = {
-      firstname: firstname,
-      lastname: lastname,
-      email: mail,
-      password: pwd,
-    };
-    // user.push({ mail, pwd, balance: 0, transactions: [] });
-
-  if (firstname == "") {
+    const user=users.find(user=> user.email==mail );
+  if(user){
+    alert("user is already created");
+    document.getElementById("fname").value='';
+    document.getElementById("lname").value='';
+    document.getElementById("email").value='';
+    document.getElementById("password").value='';
+  }
+  else{
+    if (firstname == "") {
       alert("Enter first name")
   }
   else if (lastname == "") {
@@ -46,34 +69,44 @@ function signup()
   }
   else if (pwd == "") {
       alert("Enter password")
-  }
-  else {
+  }else {
+
+    let user = {
+      firstname: firstname,
+      lastname: lastname,
+      email: mail,
+      password: pwd,
+      balance: 0,
+      transactions: []
+    };
   
-    localStorage.setItem("firstname", firstname);
-    localStorage.setItem("lastname", lastname);
-    localStorage.setItem("email", mail);
-    localStorage.setItem("password", pwd);
+    users.push(user);
+    updateUsersLocalStorage();
     alert("REGISTRATION SUCCESSFULL!");
     window.location.href = "./login.html";
   }
 }
-
-
-let passwd=localStorage.getItem("password");
-let mail=localStorage.getItem("email");
+}
 
 function login()
 {
-  // currentUser = user;
     let m = document.getElementById("mail").value;
     let p = document.getElementById("pwd").value;
-   let firname=localStorage.getItem("firstname");
+    
+let passwd=localStorage.getItem("user.password");
+let mail=localStorage.getItem("user.email");
 
-      if((m==mail) && (p==passwd))
-        {
-          window.location.href = "./myaccount.html";
-        }
-        else if(m==""){
+  
+   let firname=localStorage.getItem("firstname");
+  const user=users.find(user=> user.email==m && user.password==p);
+  if(user){
+      currentUser = user;
+      currentUser.balance=user.balance;
+      currentUser.transactions=user.transactions;
+      window.location.href = "./myaccount.html";
+    }
+  else{
+        if(m==""){
           document.getElementById("emptypwd").style.display="none";
           document.getElementById("emptymail").style.display="flex";
        }
@@ -88,84 +121,62 @@ function login()
         else if((m==mail) && (p!=passwd)){
           alert("incorrect password")
         }
-      
-      
-      else{
+        else{
           alert("User not found.Enter details");
-      }
+       }
+    }
 }
 window.onload = function() {
   let balance = parseFloat(localStorage.getItem("Balance"));
-  currentUser.balance = isNaN(balance) ? 0 : balance;
-  const accountName = document.getElementById('username-display');
-    accountName.innerHTML = `<h3 style="color: #CAFF33;">Welcome <span style="color: white;"> ${localStorage.getItem("firstname")}</span></h3>`;
-    // currentUser.balance = parseFloat(localStorage.getItem("Balance")) || 0;
+  currentUser.balance = isNaN(balance)||null ? 0 : balance;
+  // const accountName = document.getElementById('username-display');
+  //   accountName.innerHTML = `<h3 style="color: #CAFF33;">Welcome <span style="color: white;"> ${localStorage.getItem("firstname")}</span></h3>`;
+
+  const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+  if (storedUser) {
+    currentUser = storedUser;
+    const accountName = document.getElementById('username-display');
+    if (accountName) {
+      accountName.innerHTML = `<h3 style="color: #CAFF33;">Welcome <span style="color: white;">${currentUser.firstname}</span></h3>`;
+    }
+  }
+
+  const transactions=JSON.parse(localStorage.getItem("Transactions"));
+  currentUser.transactions=transactions || [];
 };
 
 function show(){
-    const pass = document.getElementById('pwd');
-    if (pass.type === 'password') {
-        pass.type = 'text';
-    } 
-    else {
-        pass.type = 'password';
-   }
+    const pass = document.getElementById('pwd');    
+   pass.type = pass.type === 'password' ? 'text' : 'password';
   }
 
 function forgot(){
-  let email=prompt("enter email");
-  if (email !== localStorage.getItem("email")) 
-    {
+  let email = prompt("Enter email");
+  const user = users.find(user => user.email === email);
+  if (user) {
+    alert("Your password is: " + user.password);
+  } else {
     alert("Email not found!");
-    } 
-  else 
-  {
-    alert("Your password is: " + localStorage.getItem("password"));
   }
 
 }
 
-
 function logout(){
-  let lo=prompt("Are you sure you want to exit?y/n")
-  if(lo=='y' || lo=='Y'){
-   window.location.href = "./home.html";
+  let lo = prompt("Are you sure you want to exit? (y/n)");
+  if (lo.toLowerCase() === 'y') {
+    window.location.href = "./home.html";
   }
 }
 
 
 function viewDetails() {
   const accountDetails = document.getElementById('account-details');
+if(accountDetails){
   accountDetails.innerHTML = `
       <h4>Username: ${localStorage.getItem("email")}</h4>
       <h4>Account Balance: ${localStorage.getItem("Balance")}</h4>
   `;
-}
-
-// function withdraw(){
-//   let p = document.getElementById("pass").value;
-//   // if(document.getElementById('with-amt').value = ''){
-//   //   alert('Enter the amount');
-//   // }
-//   if(p===passwd){
-//     const amt = parseFloat(document.getElementById('with-amt').value);
-//     if (amt>currentUser.balance || amt<0){
-//       alert('Invalid amount or insufficient balance.');
-//     }
-//     else
-//     {
-//       currentUser.balance-=amt;
-//       localStorage.setItem("Balance", currentUser.balance);
-//       viewDetails();
-//       alert("new balance is "+currentUser.balance);
-//       // transactions.push({ type: 'Withdraw', amount });
-//       document.getElementById('with-amt').value = '';
-//       document.getElementById("pass").value='';
-//     }
-//   }
-//   else
-//     alert("Password is incorrect");
-// }
+}}
 
 function withdraw() {
   let p = document.getElementById("pass").value;
@@ -183,6 +194,14 @@ function withdraw() {
        else {
         currentUser.balance -= amt;
         localStorage.setItem("Balance", currentUser.balance); 
+         // Add transaction
+         const transaction = {
+          date: new Date(),
+          type: 'Withdraw',
+          amount: amt
+        };
+        currentUser.transactions.push(transaction);
+        localStorage.setItem("Transactions", JSON.stringify(currentUser.transactions));
         viewDetails();
         alert("New balance is " + currentUser.balance);
         document.getElementById('with-amt').value = '';
@@ -211,6 +230,13 @@ function deposit(){
       else {
         currentUser.balance += amt;
         localStorage.setItem("Balance", currentUser.balance);
+        const transaction = {
+          date: new Date(),
+          type: 'Deposit',
+          amount: amt
+        };
+        currentUser.transactions.push(transaction);
+        localStorage.setItem("Transactions", JSON.stringify(currentUser.transactions));
         viewDetails();
         alert("New balance is " + currentUser.balance);
         document.getElementById('dep-amt').value = '';
@@ -223,68 +249,109 @@ function deposit(){
 }
 
 
-
-// function transfer(){
-//   let p = document.getElementById("transpwd").value;
-//   if(document.getElementById('transmail').value = ''){
-//     alert('Enter the mail');
-//   }
-//   else{
-//   if(document.getElementById('transamt').value = ''){
-//     alert('Enter the amount');
-//   }
-//   else{
-//   if(p===passwd){
-//     const amt = parseFloat(document.getElementById('transamt').value);
-//     if (amt>currentUser.balance || amt<0){
-//       alert('Invalid amount or insufficient balance.');
-//     }
-//     else
-//     {
-//       currentUser.balance-=amt;
-//       localStorage.setItem("Balance", currentUser.balance);
-//       viewDetails();
-//       alert("new balance is "+currentUser.balance);
-//       // transactions.push({ type: 'Withdraw', amount });
-//       document.getElementById('transmail').value = '';
-//       document.getElementById('transamt').value = '';
-//       document.getElementById("transpwd").value='';
-//     }
-//   }
-//   else
-//     alert("Password is incorrect");
-// }
-// }
-// }
-
 function transfer() {
   let p = document.getElementById("transpwd").value;
   let emailValue = document.getElementById('transmail').value;
   let amtValue = document.getElementById('transamt').value;
 
-  if (emailValue === '') {
-    alert('Enter the mail');
-  } else if (amtValue === '') {
-    alert('Enter the amount');
-  } else {
-    if (p === passwd) {
-      const amt = parseFloat(amtValue);
-      if (isNaN(amt) || amt <= 0) {
-        alert('Invalid transfer amount.');
-      } else if (amt > currentUser.balance) {
-        alert('Insufficient balance for transfer');
-      } else {
-        currentUser.balance -= amt;
-        localStorage.setItem("Balance", currentUser.balance);
-        viewDetails();
-        alert("New balance is " + currentUser.balance);
-        document.getElementById('transmail').value = '';
-        document.getElementById('transamt').value = '';
-        document.getElementById("transpwd").value = ''; 
-      }
+  // if (emailValue === '') {
+  //   alert('Enter the mail');
+  // } else if (amtValue === '') {
+  //   alert('Enter the amount');
+  // } else {
+  //   if (p === passwd) {
+  //     const amt = parseFloat(amtValue);
+  //     if (isNaN(amt) || amt <= 0) {
+  //       alert('Invalid transfer amount.');
+  //     } else if (amt > currentUser.balance) {
+  //       alert('Insufficient balance for transfer');
+  //     } else if(){
+
+  //     }
+  //     else {
+  //       currentUser.balance -= amt;
+  //       const transaction = {
+  //         date: new Date(),
+  //         type: 'Transfer',
+  //         amount: amt,
+  //         recipient: emailValue
+  //       };
+  //       currentUser.transactions.push(transaction);
+  //       localStorage.setItem("Transactions", JSON.stringify(currentUser.transactions));
+  //       localStorage.setItem("Balance", currentUser.balance);
+//         viewDetails();
+//         alert("New balance is " + currentUser.balance);
+//         document.getElementById('transmail').value = '';
+//         document.getElementById('transamt').value = '';
+//         document.getElementById("transpwd").value = ''; 
+//       }
+//     } else {
+//       alert("Password is incorrect");
+//     }
+//   }
+// }
+if (emailValue === '') {
+  alert('Enter the mail');
+} else if (amtValue === '') {
+  alert('Enter the amount');
+} else {
+  if (p === passwd) {
+    const amt = parseFloat(amtValue);
+    if (isNaN(amt) || amt <= 0) {
+      alert('Invalid transfer amount.');
+    } else if (amt > currentUser.balance) {
+      alert('Insufficient balance for transfer');
     } else {
-      alert("Password is incorrect");
+      // Find recipient user
+      const recipientUser = users.find(user => user.email === emailValue);
+      if (!recipientUser) {
+        alert('Recipient not found');
+        return;
+      }
+
+      currentUser.balance -= amt;
+      const transaction = {
+        date: new Date(),
+        type: 'Transfer',
+        amount: amt,
+        recipient: emailValue
+      };
+      currentUser.transactions.push(transaction);
+      recipientUser.transactions.push({
+        ...transaction,
+        type: 'Deposit' // Deposit for recipient
+      });
+      localStorage.setItem("Transactions", JSON.stringify(currentUser.transactions));
+      localStorage.setItem("Balance", currentUser.balance);
+      updateUsersLocalStorage(); // Update all user data in localStorage
+
+      viewDetails();
+      alert("New balance is " + currentUser.balance);
+      document.getElementById('transmail').value = '';
+      document.getElementById('transamt').value = '';
+      document.getElementById("transpwd").value = ''; 
     }
+  } else {
+    alert("Password is incorrect");
   }
 }
+}
+
+function viewTransactions() {
+  const transDetails = document.getElementById('transaction-list');
+  transDetails.innerHTML = '<h4>Transaction History:</h4>';
+  if (currentUser.transactions.length === 0) {
+    transDetails.innerHTML += '<p>No transactions found.</p>';
+    return;
+  }
+  const startIndex = Math.max(currentUser.transactions.length - 5, 0);
+  for (let i = currentUser.transactions.length - 1; i >= startIndex; i--) {
+    const transaction = currentUser.transactions[i];
+    const transactionElement = document.createElement('p');
+    transactionElement.innerHTML = `${new Date(transaction.date).toLocaleString()} - ${transaction.type} - ₹${transaction.amount} ${transaction.recipient ? 'to ' + transaction.recipient : ''}`;
+    transDetails.appendChild(transactionElement);
+  }
+}
+  
+
 
