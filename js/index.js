@@ -83,8 +83,8 @@ function signup()
 
 function login()
 {
-    let m = JSON.parse(localStorage.getItem("users"))
-    let p = document.getElementById("pwd").value;
+     let m = document.getElementById("mail").value;
+     let p = document.getElementById("pwd").value;
     
   const user=users.find(user=> user.email==m && user.password==p);
   if(user){
