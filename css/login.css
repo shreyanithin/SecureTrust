@@ -61,7 +61,7 @@ body{
 }
  .body{
     /* background-image: url(./images/bg.png); */
-    background-image: url(./images/radial.svg);
+    background-image: url(../images/radial.svg);
     background-repeat: no-repeat;
     background-position: right top; 
     background-color: #141414;
@@ -95,6 +95,11 @@ body{
     padding-left: 30px;
     border: none;
     color: white;
+}
+#toggle{
+  margin-left: -50px ;
+  margin-top: 10px;
+   cursor: pointer;
 }
 .empty{
   display: flex;
@@ -174,7 +179,7 @@ body{
       display: block;
       width: 20px;
       height: 20px;
-      padding-right: 10px;
+      padding-right: 50px;
       padding-top: 23px; 
       
     }
@@ -184,23 +189,33 @@ body{
       justify-content: space-between;
       gap: 3px;
     }
-    .open-menu{
-      display: none;
+    #open-menu{
+      text-align: end;
+      padding-right: 50px;
+    }
+    .signup-login{
+      justify-content: end;
+      padding-right: 0px;
     }
 
+    .body{
+      margin: 5px;
+      padding-left: 10px;
+    }
     .credential{
       flex-direction: column;
     }
     .cred{
       width: 100%;
+      margin-right: 5px;
     }
-
     .btn{
       width: 200px;
     }
-
-
-
+    #toggle{
+      margin-left: 200px ;
+      margin-top: -50px;   
+    }
     #menu{
       display: flex;
       flex-direction: column;
@@ -218,6 +233,9 @@ body{
     .socials{
       flex-direction: column;
       text-align: center;
+    }
+    .continue-with{
+      width: 250px;
     }
     #social{
       display: flex;

@@ -150,6 +150,7 @@ p{
 .feature-cont{
     display: flex;
     align-items: center;
+    margin-left: 50px;
 }
 .feature-list{
     background-color: #1C1C1C;
@@ -178,7 +179,7 @@ p{
     width: 200px;
     grid-template-columns: 200px 200px;
     /* grid-row: auto auto; */
-    grid-column-gap: 60px;
+    grid-column-gap: 200px;
     grid-row-gap: 20px;
     
 } 
@@ -188,7 +189,7 @@ p{
     border-radius:10px;
     align-items:center;
     justify-content:center;
-    width: 400px;
+    width: 340px;
     height: 180px;
   
   }
@@ -337,7 +338,7 @@ p{
       display: block;
       width: 20px;
       height: 20px;
-      padding-right: 10px;
+      padding-right: 50px;
       padding-top: 23px; 
       
     }
@@ -347,11 +348,20 @@ p{
       justify-content: space-between;
       gap: 3px;
     }
-    .open-menu{
-      display: none;
+    #open-menu{
+      text-align: end;
+      padding-right: 50px;
     }
+    .signup-login{
+      justify-content: end;
+      padding-right: 0px;
+    }
+    
     .body{
-      flex-direction: column;
+      flex-direction: column;  
+    }
+    .llc{
+      width: 200px;
     }
     .prod-1{
       flex-direction: column;
@@ -375,12 +385,13 @@ p{
     }
     .feature-cont{
       flex-direction: column;
+      margin-left: 0px;
     }
     .feature-list{
       display: flex;
       flex-direction: row;
       gap: 10px;
-      font-size: 10px;
+      font-size: 15px;
       margin-left: 30px;
     }
     .container{
@@ -401,7 +412,7 @@ p{
     justify-content: center;
     }
     .faq-box{
-      width: 300px;
+      width: 280px;
       height: 260px;
     }
     .test-head{
@@ -411,7 +422,11 @@ p{
       width: 100%;
     }
     .testimonial-body{
-      display: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
     }
     .start{
       flex-direction: column;

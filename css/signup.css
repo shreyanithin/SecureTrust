@@ -180,6 +180,10 @@ body{
     .open-menu{
       display: none;
     }
+    .body{
+      margin: 5px;
+      padding-left: 10px;
+    }
     .cred{
       width: 100%;
     }
@@ -192,12 +196,6 @@ body{
     .btn{
       width: 200px;
     }
-
-
-
-
-
-
 
     #menu{
       display: flex;
