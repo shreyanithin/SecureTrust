@@ -86,10 +86,6 @@ function login()
     let m = JSON.parse(localStorage.getItem("users"))
     let p = document.getElementById("pwd").value;
     
-let passwd=localStorage.getItem("user.password");
-let mail=localStorage.getItem("user.email");
-
-   let firname=localStorage.getItem("firstname");
   const user=users.find(user=> user.email==m && user.password==p);
   if(user){
      let currentUser = user;
